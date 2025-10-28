@@ -44,7 +44,7 @@ try {
   execSync("git add .", { stdio: "inherit" });
 
   try {
-    execSync(`git commit -m "Deploy dist to ${subDir}"`, { stdio: "inherit" });
+    execSync(`git commit -m "Deploy lib to ${subDir}"`, { stdio: "inherit" });
   } catch (e) {
     console.log("No changes to commit");
   }
