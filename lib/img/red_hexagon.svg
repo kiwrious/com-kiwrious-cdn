@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="224px" height="242px" viewBox="0 0 224 242" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>5D4EBE57-D5A7-4214-922E-8ED8C9C80C17</title>
+    <defs>
+        <linearGradient x1="75.5801083%" y1="54.616848%" x2="6.91417597%" y2="-13.8721294%" id="linearGradient-1">
+            <stop stop-color="#000000" stop-opacity="0.350633741" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-26.3%" y="-12.3%" width="152.6%" height="124.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="3" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.390652316 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="54.541348%" y1="96.2100666%" x2="42.780889%" y2="15.1690627%" id="linearGradient-3">
+            <stop stop-color="#1C3A66" offset="0%"></stop>
+            <stop stop-color="#173F7A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="53.3252479%" y1="96.2100666%" x2="44.7140511%" y2="15.1690627%" id="linearGradient-4">
+            <stop stop-color="#1C3A66" offset="0%"></stop>
+            <stop stop-color="#173F7A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page" transform="translate(-310.000000, -2609.000000)">
+            <g id="Group-76" transform="translate(310.000000, 2609.000000)">
+                <g id="Group-41">
+                    <path d="M1.95072903,73.609043 C-0.648416763,105.591614 -0.663680203,136.326202 1.9856169,168.310967 C2.73788644,177.766245 6.80886396,187.177657 14.2290763,192.803448 C41.1407017,211.507835 68.1504491,226.602064 98.6947732,239.399918 C107.008987,242.76004 116.587886,242.76004 124.899919,239.399918 C155.439882,226.623997 182.386396,211.518802 209.260953,192.794675 C216.663721,187.16669 220.723796,177.755278 221.545841,168.304387 C224.432812,136.299883 224.321607,105.617933 221.630881,73.609043 C220.898235,64.153765 216.822897,54.7401596 209.398324,49.1165612 C182.469254,30.423141 155.459507,15.3047854 124.899919,2.52009149 C116.587886,-0.840030496 107.008987,-0.840030496 98.6969537,2.52009149 C68.1395467,15.3223317 41.1058138,30.423141 14.1702031,49.1143679 C6.74126872,54.7379663 2.66374973,64.1515717 1.95072903,73.609043" id="Fill-1" fill="#D90033"></path>
+                    <path d="M1.98589104,167.642187 C2.73598009,177.057803 6.80913803,186.434095 14.2293503,192.039772 C41.1409752,210.667835 68.1485417,225.704419 98.6950458,238.451546 C107.007079,241.796164 116.588158,241.796164 124.900191,238.451546 C155.440154,225.726265 182.386667,210.678758 209.261223,192.031034 C216.663992,186.423172 220.724067,177.04688 221.546112,167.635634 C224.433083,135.760172 224.321878,105.199838 221.628971,73.3178221 C220.898506,63.8978378 216.823168,54.5215454 209.398594,48.9202375 C182.469526,30.3009132 155.459779,15.2446674 124.900191,2.50846405 C116.588158,-0.836154685 107.007079,-0.836154685 98.6950458,2.50846405 C68.1398197,15.2599595 41.1039068,30.3030978 14.170477,48.9180529 C6.74154279,54.5193608 2.66402387,63.8956532 1.94882269,73.3156375 C-0.648142573,105.171438 -0.663406013,135.786387 1.98589104,167.642187 Z" id="Fill-6-Copy-4" fill="url(#linearGradient-1)" style="mix-blend-mode: overlay;"></path>
+                </g>
+
+            </g>
+        </g>
+    </g>
+</svg>

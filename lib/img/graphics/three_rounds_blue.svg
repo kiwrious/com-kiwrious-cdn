@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="248.031" height="232.007" viewBox="0 0 248.031 232.007">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        opacity: 0.937;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2.88px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.708" y1="0.962" x2="0.17" y2="0.152" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1c3a66"/>
+      <stop offset="1" stop-color="#173f7a"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_32" data-name="Group 32" transform="translate(0 50.562) rotate(-14)">
+    <path id="Combined_Shape" data-name="Combined Shape" class="cls-1" d="M102.816,168.735A62.161,62.161,0,1,1,40.779,63.343c-.008-.4-.011-.795-.011-1.195a62.163,62.163,0,0,1,124.327,0q0,1.637-.084,3.253a62.158,62.158,0,1,1-62.195,103.333Z" transform="translate(0 0)"/>
+    <g id="Group_31" data-name="Group 31" transform="translate(13 10)">
+      <g id="Group_30" data-name="Group 30" class="cls-2">
+        <ellipse id="Oval" class="cls-3" cx="49.799" cy="49.718" rx="49.799" ry="49.718" transform="translate(40.116 0)"/>
+        <ellipse id="Oval_Copy" data-name="Oval Copy" class="cls-3" cx="49.799" cy="49.718" rx="49.799" ry="49.718" transform="translate(0 63.528)"/>
+        <ellipse id="Oval_Copy_12" data-name="Oval Copy 12" class="cls-3" cx="49.799" cy="49.718" rx="49.799" ry="49.718" transform="translate(82.998 63.528)"/>
+      </g>
+    </g>
+  </g>
+</svg>

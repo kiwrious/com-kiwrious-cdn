@@ -1,0 +1,17 @@
+<svg id="Group_34" data-name="Group 34" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75.84" height="162.24" viewBox="0 0 75.84 162.24">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.708" y1="0.962" x2="0.17" y2="0.152" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1c3a66"/>
+      <stop offset="1" stop-color="#173f7a"/>
+    </linearGradient>
+  </defs>
+  <path id="Fill_1" data-name="Fill 1" d="M60.436,93.339v-78.8A14.526,14.526,0,0,0,46.01,0H29.83A14.525,14.525,0,0,0,15.4,14.538v78.8a38.233,38.233,0,0,0,22.515,68.9,38.233,38.233,0,0,0,22.518-68.9" fill="url(#linear-gradient)"/>
+  <path id="Fill_1-2" data-name="Fill 1" d="M43.68,10.738C43.68,4.832,40.969,0,34.944,0H22.656C16.629,0,13.4,4.832,13.4,10.738V93.109C6.314,98.251,0,106.476,0,115.779,0,131.363,12.893,144,28.8,144s28.8-12.637,28.8-28.221c0-9.3-6.835-17.529-13.92-22.67Z" transform="translate(9.6 7.68)" stroke="#fff" stroke-miterlimit="10" stroke-width="2.88" fill="url(#linear-gradient)"/>
+  <path id="Line" d="M9.545.48H.455" transform="translate(42.24 24)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.88"/>
+  <path id="Line_Copy" data-name="Line Copy" d="M9.545.48H.455" transform="translate(42.24 48)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.88"/>
+  <path id="Line_Copy_2" data-name="Line Copy 2" d="M9.545.48H.455" transform="translate(42.24 72)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.88"/>
+  <path id="Line_Copy_3" data-name="Line Copy 3" d="M9.545.48H.455" transform="translate(42.24 96)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.88"/>
+  <path id="Line_Copy_4" data-name="Line Copy 4" d="M4.583.96H.417" transform="translate(47.24 84)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.88"/>
+  <path id="Line_Copy_5" data-name="Line Copy 5" d="M4.583.96H.417" transform="translate(47.24 60)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.88"/>
+  <path id="Line_Copy_6" data-name="Line Copy 6" d="M4.583.96H.417" transform="translate(47.24 36)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.88"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg id="Group_28_Copy" data-name="Group 28 Copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.9" height="36" viewBox="0 0 27.9 36">
+  <defs>
+    <linearGradient id="linear-gradient" y1="1" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f98d0e"/>
+      <stop offset="1" stop-color="#fa3c28"/>
+    </linearGradient>
+  </defs>
+  <path id="Rectangle" d="M0,7.2,7.2,0H26.1a1.8,1.8,0,0,1,1.8,1.8V34.2A1.8,1.8,0,0,1,26.1,36H1.8A1.8,1.8,0,0,1,0,34.2Z" fill="url(#linear-gradient)"/>
+  <path id="Rectangle-2" data-name="Rectangle" d="M7.2,0V5.4A1.8,1.8,0,0,1,5.4,7.2H0Z" fill="#fff" opacity="0.315"/>
+  <path id="Combined_Shape" data-name="Combined Shape" d="M.956,18a.9.9,0,1,1,0-1.8H14.344a.9.9,0,1,1,0,1.8Zm5.535-4.546-.068-.023H6.35a1.182,1.182,0,0,1-.122-.079l-.063-.033L1.289,9.588A.927.927,0,0,1,.907,8.96a.913.913,0,0,1,.206-.7.99.99,0,0,1,.67-.345,1,1,0,0,1,.724.219L5.8,10.651V.932a.976.976,0,0,1,1.949,0v9.718l3.291-2.518a1.006,1.006,0,0,1,1.346.162.906.906,0,0,1-.128,1.293L7.383,13.318l-.063.033a1.093,1.093,0,0,1-.122.079H7.124l-.068.023a.893.893,0,0,1-.565,0Z" transform="translate(7.2 9)" fill="#fff"/>
+</svg>

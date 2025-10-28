@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="164" height="172" viewBox="0 0 164 172">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #183764;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-3 {
+        filter: url(#Fill_14_Copy_2);
+      }
+    </style>
+    <filter id="Fill_14_Copy_2" x="0" y="0" width="164" height="172" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-opacity="0.235"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_19" data-name="Group 19" transform="translate(12 11)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, -12, -11)">
+      <path id="Fill_14_Copy_2-2" data-name="Fill 14 Copy 2" class="cls-1" d="M116.885,132.939c29.162-24.632,30.974-70.924,4.055-103.218C94.519-1.974,13.831-.044,10.4.053L10.41.046A5.318,5.318,0,0,0,5.361,4.311c-.667,3.363-16.588,83.038,9.831,114.731,26.927,32.287,72.53,38.53,101.692,13.9" transform="translate(12 11)"/>
+    </g>
+    <path id="Fill_14_Copy_2-3" data-name="Fill 14 Copy 2" class="cls-2" d="M103.526,118.568c25.829-21.969,27.434-63.256,3.591-92.059C83.716-1.76,12.25-.039,9.213.047L9.22.041a4.72,4.72,0,0,0-4.471,3.8c-.59,3-14.692,74.061,8.708,102.328,23.85,28.8,64.241,34.364,90.07,12.4" transform="translate(8 8)"/>
+  </g>
+</svg>

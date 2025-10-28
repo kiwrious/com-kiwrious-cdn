@@ -1,0 +1,636 @@
+/**
+ * Project Theme CSS
+ * Common visual styles extracted from project files
+ * Contains colors, gradients, fonts, shadows, borders, and other visual definitions
+ * Excludes specific dimensions, margins, padding, and layout properties
+ */
+
+/* ========================================================================
+   FONT IMPORTS
+   ======================================================================== */
+
+/* TypeKit Fonts */
+@import url("https://use.typekit.net/ekz0aha.css");
+
+/* Custom Font Faces (commented - uncomment and update paths as needed) */
+/*
+@font-face {
+  font-family: "Aglet Sans";
+  src: url("../fonts/Aglet_Sans/AgletSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Aglet Sans Black";
+  src: url("../fonts/Aglet_Sans/AgletSans-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Aglet Sans Bold";
+  src: url("../fonts/Aglet_Sans/AgletSans-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Ballinger Regular";
+  src: url("../fonts/Ballinger/Ballinger_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ballinger Bold";
+  src: url("../fonts/Ballinger/Ballinger_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'slick';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/slick.eot');
+  src: url('../fonts/slick.eot?#iefix') format('embedded-opentype'), 
+       url('../fonts/slick.woff') format('woff'), 
+       url('../fonts/slick.ttf') format('truetype'), 
+       url('../fonts/slick.svg#slick') format('svg');
+}
+*/
+
+/* ========================================================================
+   CSS CUSTOM PROPERTIES (CSS VARIABLES)
+   ======================================================================== */
+
+:root {
+  /* Primary Colors */
+  --color-primary: #f85708;
+  --color-primary-dark: #005766;
+  --color-primary-darker: #12333d;
+  
+  /* Secondary Colors */
+  --color-secondary: #4fd7cf;
+  --color-accent: #00aba1;
+  
+  /* Text Colors */
+  --color-text-dark: #222;
+  --color-text-primary: #12333d;
+  --color-text-white: #fff;
+  
+  /* Background Colors */
+  --color-bg-white: #fff;
+  --color-bg-black: #000;
+  --color-bg-dark: #12333d;
+  --color-bg-primary: #005766;
+  
+  /* Border Colors */
+  --color-border-light: #ccc;
+  --color-border-white: #fff;
+  
+  /* Selection Colors */
+  --color-selection-bg: #b3d4fc;
+  
+  /* Shadow Colors */
+  --shadow-default: 0 3px 16px 0 rgba(0, 0, 0, 0.11);
+  --shadow-card: 0 1px 5px 0 rgba(0, 0, 0, 0.3), 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  --box-shadow-none: 0 0 1px rgba(0, 0, 0, 0);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(180deg, #005766 0%, #12333d 100%);
+  
+  /* Border Radius */
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px;
+  --border-radius-large: 15px;
+  --border-radius-round: 50px;
+  
+  /* Font Families */
+  --font-family-primary: "aglet-sans", sans-serif;
+  --font-family-secondary: "ballinger", sans-serif;
+  --font-family-fallback: Helvetica, sans-serif;
+  --font-family-slick: 'slick';
+  
+  /* Font Weights */
+  --font-weight-light: 100;
+  --font-weight-normal: 300;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-bolder: bold;
+  
+  /* Opacity Values */
+  --opacity-light: 0.5;
+  --opacity-medium: 0.6;
+  --opacity-medium-high: 0.7;
+  --opacity-high: 0.75;
+  --opacity-very-high: 0.81;
+  
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-default: 0.3s;
+  --transition-slow: 0.5s;
+  --transition-ease: ease;
+  --transition-ease-in-out: ease-in-out;
+  --transition-ease-out: ease-out;
+  
+  /* Line Heights */
+  --line-height-tight: 1.4;
+}
+
+/* ========================================================================
+   BASE COLORS
+   ======================================================================== */
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.bg-primary-darker {
+  background-color: var(--color-primary-darker);
+}
+
+.bg-white {
+  background-color: var(--color-bg-white);
+}
+
+.bg-black {
+  background-color: var(--color-bg-black);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+/* ========================================================================
+   GRADIENTS
+   ======================================================================== */
+
+.bg-gradient-primary {
+  background-image: var(--gradient-primary);
+  background-repeat: no-repeat;
+}
+
+/* ========================================================================
+   TEXT COLORS
+   ======================================================================== */
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-white {
+  color: var(--color-text-white);
+}
+
+.text-dark {
+  color: var(--color-text-dark);
+}
+
+.text-black {
+  color: var(--color-bg-black);
+}
+
+/* ========================================================================
+   FONT FAMILIES
+   ======================================================================== */
+
+.font-primary {
+  font-family: var(--font-family-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-family-secondary);
+}
+
+.font-fallback {
+  font-family: var(--font-family-fallback);
+}
+
+/* ========================================================================
+   FONT WEIGHTS
+   ======================================================================== */
+
+.font-weight-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-weight-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-weight-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-weight-bolder {
+  font-weight: var(--font-weight-bolder);
+}
+
+/* ========================================================================
+   BORDERS
+   ======================================================================== */
+
+.border-white {
+  border-color: var(--color-border-white);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.border-none {
+  border: none;
+}
+
+/* Border Radius */
+.rounded-small {
+  border-radius: var(--border-radius-small);
+}
+
+.rounded-medium {
+  border-radius: var(--border-radius-medium);
+}
+
+.rounded-large {
+  border-radius: var(--border-radius-large);
+}
+
+.rounded-circle {
+  border-radius: var(--border-radius-round);
+}
+
+/* ========================================================================
+   SHADOWS
+   ======================================================================== */
+
+.shadow-default {
+  box-shadow: var(--shadow-default);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-none {
+  box-shadow: none;
+}
+
+/* ========================================================================
+   OPACITY
+   ======================================================================== */
+
+.opacity-light {
+  opacity: var(--opacity-light);
+}
+
+.opacity-medium {
+  opacity: var(--opacity-medium);
+}
+
+.opacity-medium-high {
+  opacity: var(--opacity-medium-high);
+}
+
+.opacity-high {
+  opacity: var(--opacity-high);
+}
+
+.opacity-very-high {
+  opacity: var(--opacity-very-high);
+}
+
+/* ========================================================================
+   TEXT SELECTION
+   ======================================================================== */
+
+::-moz-selection {
+  background: var(--color-selection-bg);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--color-selection-bg);
+  text-shadow: none;
+}
+
+/* ========================================================================
+   HOVER EFFECTS
+   ======================================================================== */
+
+/* Ripple Effect for Buttons */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple:before {
+  border-radius: var(--border-radius-round);
+  background-color: rgba(255, 255, 255, 0.6);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.ripple:hover {
+  box-shadow: none;
+}
+
+.ripple:focus:before, 
+.ripple:hover:before {
+  transition: all var(--transition-slow) var(--transition-ease-out);
+  opacity: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Navigation Hover Effect */
+.nav-hover-bg:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================================================
+   TRANSITIONS
+   ======================================================================== */
+
+.transition-fast {
+  transition: all var(--transition-fast) var(--transition-ease);
+}
+
+.transition-default {
+  transition: all var(--transition-default) var(--transition-ease-in-out);
+}
+
+.transition-slow {
+  transition: all var(--transition-slow) var(--transition-ease-out);
+}
+
+.transition-opacity {
+  -webkit-transition: opacity var(--transition-default) var(--transition-ease-in-out);
+  -moz-transition: opacity var(--transition-default) var(--transition-ease-in-out);
+  transition: opacity var(--transition-default) var(--transition-ease-in-out);
+}
+
+/* ========================================================================
+   ANIMATIONS
+   ======================================================================== */
+
+/* Ripple Out Animation */
+@-webkit-keyframes hvr-ripple-out {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hvr-ripple-out {
+  100% {
+    opacity: 0;
+  }
+}
+
+.hvr-ripple-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: var(--box-shadow-none);
+  position: relative;
+}
+
+.hvr-ripple-out:before {
+  visibility: hidden;
+  position: absolute;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.hvr-ripple-out:hover:before, 
+.hvr-ripple-out:focus:before {
+  visibility: visible;
+  -webkit-animation-name: hvr-ripple-out;
+  animation-name: hvr-ripple-out;
+}
+
+/* ========================================================================
+   FORM ELEMENTS
+   ======================================================================== */
+
+/* Form Control Base Styles */
+.form-control-theme {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--border-radius-medium);
+  color: var(--color-text-white);
+  border: none;
+}
+
+.form-control-theme::placeholder {
+  opacity: var(--opacity-medium-high);
+  color: var(--color-text-white);
+}
+
+.form-control-bordered {
+  border-radius: var(--border-radius-medium);
+  color: var(--color-text-white);
+  border: 1px solid var(--color-border-white);
+}
+
+/* Checkbox Styles */
+.custom-checkbox-theme .custom-control-label::before {
+  background-color: var(--color-bg-white);
+}
+
+.custom-checkbox-theme .custom-control-input:checked ~ .custom-control-label::before {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-primary);
+  box-shadow: none;
+}
+
+.custom-checkbox-theme .custom-control-input:checked ~ .custom-control-label::after {
+  color: var(--color-primary);
+}
+
+/* Autofill Styles */
+.form-autofill-theme input:-webkit-autofill,
+.form-autofill-theme input:-webkit-autofill:hover,
+.form-autofill-theme input:-webkit-autofill:focus,
+.form-autofill-theme input:-webkit-autofill:active {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-white);
+  border: 1px solid transparent;
+  -webkit-text-fill-color: var(--color-text-white);
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-bg-primary) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ========================================================================
+   BUTTONS
+   ======================================================================== */
+
+.btn-primary-theme {
+  border-radius: var(--border-radius-medium);
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  border: none;
+}
+
+.btn-primary-theme:hover,
+.btn-primary-theme:active,
+.btn-primary-theme:focus {
+  color: var(--color-text-white);
+  text-decoration: none;
+}
+
+.btn-outline-white {
+  color: var(--color-text-white);
+  border: 2px solid var(--color-border-white);
+  border-radius: var(--border-radius-medium);
+  background-color: transparent;
+  font-family: var(--font-family-secondary);
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:active,
+.btn-outline-white:focus {
+  color: var(--color-primary);
+  background-color: var(--color-bg-white);
+}
+
+.btn-white-solid {
+  border: 2px solid var(--color-border-white);
+  border-radius: var(--border-radius-medium);
+  background-color: var(--color-bg-white);
+  color: var(--color-primary);
+  font-family: var(--font-family-secondary);
+  text-align: center;
+}
+
+/* ========================================================================
+   MODALS
+   ======================================================================== */
+
+.modal-theme .modal-content {
+  border-radius: var(--border-radius-large);
+  background: var(--color-bg-white);
+  box-shadow: var(--shadow-default);
+}
+
+.modal-theme .modal-body .header h4 {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bolder);
+  color: var(--color-text-primary);
+}
+
+.modal-theme .modal-body .content p {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-secondary);
+}
+
+/* ========================================================================
+   SOCIAL ICONS
+   ======================================================================== */
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-white);
+  box-shadow: var(--shadow-default);
+  border-radius: var(--border-radius-round);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.social-icon:hover {
+  cursor: pointer;
+}
+
+/* ========================================================================
+   OVERLAY EFFECTS
+   ======================================================================== */
+
+.overlay-dark {
+  background-color: var(--color-bg-black);
+  opacity: var(--opacity-light);
+}
+
+.overlay-light {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================================================
+   SCROLL BEHAVIOR
+   ======================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================================================
+   UTILITY CLASSES
+   ======================================================================== */
+
+/* Text Decoration */
+.no-underline:hover {
+  text-decoration: none;
+}
+
+/* Cursor */
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+/* Transform */
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+/* Background Properties */
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+/* Outline */
+.outline-none:focus,
+.outline-none:active {
+  outline: none;
+  border: none;
+}
+
+/* Font Smoothing */
+.font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

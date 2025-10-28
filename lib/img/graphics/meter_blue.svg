@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="193.862" height="229.174" viewBox="0 0 193.862 229.174">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2.88px;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke-linecap: square;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.708" y1="0.962" x2="0.17" y2="0.152" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1c3a66"/>
+      <stop offset="1" stop-color="#173f7a"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_34" data-name="Group 34" transform="matrix(0.848, 0.53, -0.53, 0.848, 110.753, 0)">
+    <path id="Fill_1" data-name="Fill 1" class="cls-1" d="M78.1,120.241V18.728A18.741,18.741,0,0,0,59.454,0H38.546A18.739,18.739,0,0,0,19.9,18.728V120.241a49,49,0,1,0,58.191,0"/>
+    <path id="Fill_1-2" data-name="Fill 1" class="cls-2" d="M58.97,13.87A14.016,14.016,0,0,0,44.894,0H29.106A14.015,14.015,0,0,0,15.03,13.87v106.4A36.189,36.189,0,0,0,0,149.548C0,169.678,16.564,186,37,186s37-16.322,37-36.452a36.2,36.2,0,0,0-15.03-29.282Z" transform="translate(13 10)"/>
+    <path id="Line" class="cls-3" d="M14.318.5H.682" transform="translate(54 31)"/>
+    <path id="Line_Copy" data-name="Line Copy" class="cls-3" d="M14.318.5H.682" transform="translate(54 62)"/>
+    <path id="Line_Copy_2" data-name="Line Copy 2" class="cls-3" d="M14.318.5H.682" transform="translate(54 93)"/>
+    <path id="Line_Copy_3" data-name="Line Copy 3" class="cls-3" d="M14.318.5H.682" transform="translate(54 124)"/>
+    <path id="Line_Copy_4" data-name="Line Copy 4" class="cls-3" d="M6.417,1H.583" transform="translate(62 108)"/>
+    <path id="Line_Copy_5" data-name="Line Copy 5" class="cls-3" d="M6.417,1H.583" transform="translate(62 78)"/>
+    <path id="Line_Copy_6" data-name="Line Copy 6" class="cls-3" d="M6.417,1H.583" transform="translate(62 48)"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="225px" height="243px" viewBox="0 0 225 243" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>A7F184D0-3F45-4094-9627-AD8A847B644C</title>
+  <defs>
+    <linearGradient x1="75.5801083%" y1="54.616848%" x2="6.91417597%" y2="-13.8721294%" id="linearGradient-1">
+      <stop stop-color="#000000" stop-opacity="0.350633741" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" offset="100%"></stop>
+    </linearGradient>
+    <rect x="24" y="77" width="179" height="90" id="rect-2"></rect>
+    <filter x="-5.0%" y="-11.1%" width="113.4%" height="126.7%" filterUnits="objectBoundingBox" id="filter-3">
+      <feOffset dx="3" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.390652316 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+    </filter>
+  </defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Landing-Page" transform="translate(-556.000000, -2609.000000)">
+      <g id="Group-10" transform="translate(310.000000, 2609.000000)">
+        <g id="Group-77" transform="translate(246.000000, 0.000000)">
+          <g id="Group-35">
+            <path d="M1.97168592,74.2479164 C-0.63604341,106.15491 -0.651357257,136.81687 2.0088767,168.726052 C2.76144288,178.158986 6.84805227,187.548159 14.2905818,193.160656 C41.2910813,211.820843 68.390027,226.879404 99.0374098,239.647015 C107.376893,242.999197 116.987426,242.999197 125.326909,239.647015 C155.967729,226.901285 183.003232,211.831783 209.96654,193.151904 C217.393756,187.537218 221.467239,178.148046 222.294187,168.719488 C225.190692,136.790613 225.076932,106.181167 222.377319,74.2479164 C221.642255,64.814982 217.555645,55.4236216 210.104365,49.8133122 C183.086364,31.164066 155.989606,16.0814362 125.329097,3.32695356 C116.987426,-0.025228193 107.376893,-0.025228193 99.0374098,3.32695356 C68.3812763,16.0989411 41.2560783,31.164066 14.2337018,49.8111241 C6.77804612,55.4214335 2.68706134,64.8127938 1.97168592,74.2479164" id="Fill-19" fill="#FABC14"></path>
+
+
+          </g>
+
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
