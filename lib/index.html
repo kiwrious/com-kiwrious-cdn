@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kiwrious Design Reference</title>
+<link rel="icon" href="img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" href="img/favicon/apple-icon.png" />
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  /* ------------------------------------------------------------------
+     Page-only styles. The theme is consumed (not redefined) below.
+     ------------------------------------------------------------------ */
+  @font-face { font-family: "Aglet Sans"; src: url("fonts/Aglet_Sans/AgletSans-Regular.otf") format("opentype"); }
+  @font-face { font-family: "Aglet Sans"; font-weight: 700; src: url("fonts/Aglet_Sans/AgletSans-Bold.otf") format("opentype"); }
+  @font-face { font-family: "Aglet Sans"; font-weight: 900; src: url("fonts/Aglet_Sans/AgletSans-Black.otf") format("opentype"); }
+  @font-face { font-family: "Aglet Sans"; font-weight: 200; src: url("fonts/Aglet_Sans/AgletSans-ExtraLight.otf") format("opentype"); }
+  @font-face { font-family: "Aglet Sans"; font-weight: 300; src: url("fonts/Aglet_Sans/AgletSans-Light.otf") format("opentype"); }
+  @font-face { font-family: "Aglet Sans"; font-weight: 600; src: url("fonts/Aglet_Sans/AgletSans-SemiBold.otf") format("opentype"); }
+  @font-face { font-family: "Aglet Sans"; font-weight: 800; src: url("fonts/Aglet_Sans/AgletSans-Ultra.otf") format("opentype"); }
+  @font-face { font-family: "Ballinger"; src: url("fonts/Ballinger/Ballinger_Regular.ttf") format("truetype"); }
+  @font-face { font-family: "Ballinger"; font-weight: 700; src: url("fonts/Ballinger/Ballinger_Bold.ttf") format("truetype"); }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Aglet Sans", var(--font-family-primary);
+    color: var(--color-text-primary);
+    background: #f6f8f9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Slim top bar */
+  header.hero {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--gradient-primary);
+    color: var(--color-text-white);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 48px;
+    box-sizing: border-box;
+  }
+  header.hero img.logo { height: 24px; display: block; }
+  header.hero .title {
+    font-family: "Aglet Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  /* Two-column layout: sticky vertical TOC + content */
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+  }
+
+  nav.toc {
+    position: sticky;
+    top: 48px;
+    align-self: start;
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+    background: #fff;
+    border-right: 1px solid #e6ebee;
+    padding: 16px 0;
+    font-family: "Ballinger", sans-serif;
+    font-size: 13px;
+  }
+  nav.toc a {
+    display: block;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    padding: 7px 20px;
+    border-left: 3px solid transparent;
+    line-height: 1.2;
+  }
+  nav.toc a:hover {
+    color: var(--color-primary);
+    background: #f6f8f9;
+  }
+  nav.toc a.active {
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    background: #f6f8f9;
+    font-weight: 700;
+  }
+
+  main { padding: 0 48px 96px; min-width: 0; }
+
+  section { margin-top: 56px; scroll-margin-top: 64px; }
+  section:first-of-type { margin-top: 32px; }
+  section > h2 {
+    font-family: "Aglet Sans", sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    margin: 0 0 4px;
+    color: var(--color-primary-darker);
+  }
+  section > .lead {
+    font-family: "Ballinger", sans-serif;
+    color: #5b6b73;
+    margin: 0 0 24px;
+    font-size: 14px;
+  }
+
+  h3.subhead {
+    font-family: "Aglet Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #5b6b73;
+    margin: 32px 0 12px;
+  }
+
+  /* Swatch grid */
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+  .swatch {
+    background: #fff;
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-default);
+  }
+  .swatch .chip {
+    height: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  }
+  .swatch .meta {
+    padding: 12px 14px 14px;
+    font-family: "Ballinger", monospace;
+    font-size: 12px;
+  }
+  .swatch .name {
+    font-family: "Aglet Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--color-primary-darker);
+    margin-bottom: 2px;
+  }
+  .swatch .hex { color: #5b6b73; }
+  .swatch .var { color: #8a9aa1; font-size: 11px; margin-top: 4px; word-break: break-all; }
+
+  /* Gradient */
+  .gradient-card {
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-default);
+    background: #fff;
+  }
+  .gradient-card .preview { height: 140px; background: var(--gradient-primary); }
+  .gradient-card .meta { padding: 14px 18px; font-family: "Ballinger", monospace; font-size: 12px; color: #5b6b73; }
+
+  /* Typography */
+  .type-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    padding: 16px 0;
+    border-top: 1px solid #e6ebee;
+    align-items: baseline;
+  }
+  .type-row:first-of-type { border-top: 0; }
+  .type-row .label {
+    font-family: "Ballinger", monospace;
+    font-size: 12px;
+    color: #5b6b73;
+  }
+  .type-row .sample { line-height: 1.2; color: var(--color-primary-darker); }
+
+  /* Cards / generic grids */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: #fff;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-default);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card .thumb {
+    height: 140px;
+    background: #f1f4f6 center/contain no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card .thumb.cover { background-size: cover; }
+  .card .thumb img { max-width: 80%; max-height: 80%; }
+  .card .thumb.full img { max-width: 100%; max-height: 100%; }
+  .card .name {
+    padding: 10px 12px;
+    font-family: "Ballinger", monospace;
+    font-size: 11px;
+    color: #5b6b73;
+    border-top: 1px solid #f0f3f5;
+    word-break: break-all;
+  }
+
+  /* Hexagon brand row */
+  .hex-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+  .hex-row .hex {
+    background: #fff;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-default);
+    padding: 20px;
+    text-align: center;
+  }
+  .hex-row .hex img { width: 80px; height: 80px; }
+  .hex-row .hex .name { font-family: "Ballinger", monospace; font-size: 11px; color: #5b6b73; margin-top: 10px; word-break: break-all; }
+
+  /* Social icons */
+  .social-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .social-row .demo {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    background: #fff; padding: 16px; border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-default); min-width: 110px;
+  }
+  .social-row .demo.dark { background: var(--color-primary-dark); }
+  .social-row .demo img { width: 32px; height: 32px; }
+  .social-row .demo .name {
+    font-family: "Ballinger", monospace; font-size: 11px;
+    color: #5b6b73;
+  }
+  .social-row .demo.dark .name { color: rgba(255,255,255,0.7); }
+
+  /* Buttons demo */
+  .btn-demo { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px; background: var(--color-primary-dark); border-radius: var(--border-radius-medium); }
+  .btn-demo button { padding: 12px 24px; font-size: 14px; cursor: pointer; }
+
+  /* Shadow demo */
+  .shadow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+  .shadow-demo {
+    background: #fff;
+    border-radius: var(--border-radius-medium);
+    padding: 24px;
+    text-align: center;
+    font-family: "Ballinger", monospace;
+    font-size: 12px;
+    color: #5b6b73;
+  }
+
+  /* Radius / opacity / transition demos */
+  .demo-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+  .demo-block {
+    background: var(--color-primary);
+    height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    font-family: "Ballinger", monospace;
+    font-size: 12px;
+  }
+
+  /* Logo gallery */
+  .logo-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .logo-gallery .lg {
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-default);
+    padding: 32px 24px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 160px;
+  }
+  .logo-gallery .lg.light { background: #fff; }
+  .logo-gallery .lg.dark { background: var(--color-primary-dark); }
+  .logo-gallery .lg img { max-width: 100%; height: 56px; }
+  .logo-gallery .lg .name {
+    margin-top: 14px;
+    font-family: "Ballinger", monospace; font-size: 11px;
+    color: #5b6b73;
+  }
+  .logo-gallery .lg.dark .name { color: rgba(255,255,255,0.7); }
+
+  /* Favicon strip — uniform grid so small images stay centered */
+  .fav-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+  }
+  .fav-strip .f {
+    background: #fff;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-default);
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .fav-strip .f img { display: block; }
+  .fav-strip .f .name {
+    font-family: "Ballinger", monospace;
+    font-size: 10px;
+    color: #5b6b73;
+  }
+
+  footer {
+    margin-top: 80px;
+    padding: 32px 48px;
+    background: var(--color-primary-darker);
+    color: rgba(255,255,255,0.7);
+    font-family: "Ballinger", sans-serif;
+    font-size: 13px;
+  }
+  footer code { color: #fff; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; }
+
+  /* ------------------------------------------------------------------
+     Action overlay (copy / download buttons)
+     ------------------------------------------------------------------ */
+  .swatch, .gradient-card, .shadow-demo, .demo-block,
+  .card, .hex-row .hex, .social-row .demo,
+  .logo-gallery .lg, .fav-strip .f, .type-row {
+    position: relative;
+  }
+
+  .actions {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: flex;
+    gap: 4px;
+    opacity: 0.18;
+    transition: opacity 0.15s ease;
+    z-index: 2;
+  }
+  .swatch:hover .actions,
+  .gradient-card:hover .actions,
+  .shadow-demo:hover .actions,
+  .demo-block:hover .actions,
+  .card:hover .actions,
+  .hex-row .hex:hover .actions,
+  .social-row .demo:hover .actions,
+  .logo-gallery .lg:hover .actions,
+  .fav-strip .f:hover .actions,
+  .type-row:hover .actions { opacity: 1; }
+
+  .actions button {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: #5b6b73;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 0;
+    line-height: 1;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .actions button:hover {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+  }
+  .actions button i { pointer-events: none; }
+
+  /* Type rows: dock actions at the right edge of the row */
+  .type-row .actions {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+  }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    background: var(--color-primary-darker);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: var(--border-radius-medium);
+    font-family: "Ballinger", sans-serif;
+    font-size: 13px;
+    box-shadow: var(--shadow-card);
+    opacity: 0;
+    transform: translate(-50%, 24px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    z-index: 1000;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="logo" src="img/Kiwrious_logo_white_wide.svg" alt="Kiwrious" />
+  <span class="title">Design Reference</span>
+</header>
+
+<div class="layout">
+  <nav class="toc">
+    <a href="#colors">Colors</a>
+    <a href="#gradients">Gradients</a>
+    <a href="#typography">Typography</a>
+    <a href="#shadows">Shadows</a>
+    <a href="#radius">Radius</a>
+    <a href="#opacity">Opacity</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#logos">Logos</a>
+    <a href="#hexagons">Hexagons</a>
+    <a href="#social">Social</a>
+    <a href="#sensors">Sensor graphics</a>
+    <a href="#graphics">Graphics</a>
+    <a href="#brands">Partner brands</a>
+    <a href="#schools">Schools</a>
+    <a href="#avatars">Avatars</a>
+    <a href="#news">News</a>
+    <a href="#photography">Photography</a>
+    <a href="#favicon">Favicon</a>
+  </nav>
+
+  <main>
+
+<!-- ============== COLORS ============== -->
+<section id="colors">
+  <h2>Color palette</h2>
+  <p class="lead">All tokens from <code>css/theme.css</code> :root.</p>
+
+  <h3 class="subhead">Primary / Accent</h3>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#f85708"></div><div class="meta"><div class="name">Primary</div><div class="hex">#f85708</div><div class="var">--color-primary</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#005766"></div><div class="meta"><div class="name">Primary Dark</div><div class="hex">#005766</div><div class="var">--color-primary-dark</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#12333d"></div><div class="meta"><div class="name">Primary Darker</div><div class="hex">#12333d</div><div class="var">--color-primary-darker</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#4fd7cf"></div><div class="meta"><div class="name">Secondary</div><div class="hex">#4fd7cf</div><div class="var">--color-secondary</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#00aba1"></div><div class="meta"><div class="name">Accent</div><div class="hex">#00aba1</div><div class="var">--color-accent</div></div></div>
+  </div>
+
+  <h3 class="subhead">Text</h3>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#222"></div><div class="meta"><div class="name">Text Dark</div><div class="hex">#222</div><div class="var">--color-text-dark</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#12333d"></div><div class="meta"><div class="name">Text Primary</div><div class="hex">#12333d</div><div class="var">--color-text-primary</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#fff;border-bottom:1px solid #e6ebee"></div><div class="meta"><div class="name">Text White</div><div class="hex">#fff</div><div class="var">--color-text-white</div></div></div>
+  </div>
+
+  <h3 class="subhead">Surface / Border / Selection</h3>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#fff;border-bottom:1px solid #e6ebee"></div><div class="meta"><div class="name">BG White</div><div class="hex">#fff</div><div class="var">--color-bg-white</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#000"></div><div class="meta"><div class="name">BG Black</div><div class="hex">#000</div><div class="var">--color-bg-black</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#12333d"></div><div class="meta"><div class="name">BG Dark</div><div class="hex">#12333d</div><div class="var">--color-bg-dark</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#005766"></div><div class="meta"><div class="name">BG Primary</div><div class="hex">#005766</div><div class="var">--color-bg-primary</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#ccc"></div><div class="meta"><div class="name">Border Light</div><div class="hex">#ccc</div><div class="var">--color-border-light</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#b3d4fc"></div><div class="meta"><div class="name">Selection</div><div class="hex">#b3d4fc</div><div class="var">--color-selection-bg</div></div></div>
+  </div>
+</section>
+
+<!-- ============== GRADIENTS ============== -->
+<section id="gradients">
+  <h2>Gradients</h2>
+  <p class="lead">Reusable gradient backgrounds.</p>
+  <div class="gradient-card">
+    <div class="preview"></div>
+    <div class="meta">--gradient-primary &nbsp;·&nbsp; linear-gradient(180deg, #005766 0%, #12333d 100%)</div>
+  </div>
+</section>
+
+<!-- ============== TYPOGRAPHY ============== -->
+<section id="typography">
+  <h2>Typography</h2>
+  <p class="lead">Aglet Sans (display) and Ballinger (body) — bundled in <code>fonts/</code>. TypeKit version is also imported via theme.css.</p>
+
+  <h3 class="subhead">Aglet Sans · Display</h3>
+  <div class="type-row"><div class="label">ExtraLight 200</div><div class="sample" style="font-family:'Aglet Sans';font-weight:200;font-size:36px">Discover the world around you.</div></div>
+  <div class="type-row"><div class="label">Light 300</div><div class="sample" style="font-family:'Aglet Sans';font-weight:300;font-size:36px">Discover the world around you.</div></div>
+  <div class="type-row"><div class="label">Regular 400</div><div class="sample" style="font-family:'Aglet Sans';font-weight:400;font-size:36px">Discover the world around you.</div></div>
+  <div class="type-row"><div class="label">SemiBold 600</div><div class="sample" style="font-family:'Aglet Sans';font-weight:600;font-size:36px">Discover the world around you.</div></div>
+  <div class="type-row"><div class="label">Bold 700</div><div class="sample" style="font-family:'Aglet Sans';font-weight:700;font-size:36px">Discover the world around you.</div></div>
+  <div class="type-row"><div class="label">Ultra 800</div><div class="sample" style="font-family:'Aglet Sans';font-weight:800;font-size:36px">Discover the world around you.</div></div>
+  <div class="type-row"><div class="label">Black 900</div><div class="sample" style="font-family:'Aglet Sans';font-weight:900;font-size:36px">Discover the world around you.</div></div>
+
+  <h3 class="subhead">Ballinger · Body</h3>
+  <div class="type-row"><div class="label">Regular</div><div class="sample" style="font-family:'Ballinger';font-weight:400;font-size:18px;line-height:1.6">Kiwrious is a low-cost science kit that connects to a browser. The platform is used by schools across New Zealand to make data-driven discovery accessible in any classroom.</div></div>
+  <div class="type-row"><div class="label">Bold</div><div class="sample" style="font-family:'Ballinger';font-weight:700;font-size:18px;line-height:1.6">Kiwrious is a low-cost science kit that connects to a browser. The platform is used by schools across New Zealand to make data-driven discovery accessible in any classroom.</div></div>
+
+  <h3 class="subhead">Type Scale (Aglet Sans Bold)</h3>
+  <div class="type-row"><div class="label">48 / Hero</div><div class="sample" style="font-family:'Aglet Sans';font-weight:700;font-size:48px">The quick brown fox</div></div>
+  <div class="type-row"><div class="label">36 / Display</div><div class="sample" style="font-family:'Aglet Sans';font-weight:700;font-size:36px">The quick brown fox</div></div>
+  <div class="type-row"><div class="label">28 / H2</div><div class="sample" style="font-family:'Aglet Sans';font-weight:700;font-size:28px">The quick brown fox</div></div>
+  <div class="type-row"><div class="label">20 / H3</div><div class="sample" style="font-family:'Aglet Sans';font-weight:700;font-size:20px">The quick brown fox</div></div>
+  <div class="type-row"><div class="label">16 / Body</div><div class="sample" style="font-family:'Ballinger';font-weight:400;font-size:16px">The quick brown fox</div></div>
+  <div class="type-row"><div class="label">14 / Small</div><div class="sample" style="font-family:'Ballinger';font-weight:400;font-size:14px">The quick brown fox</div></div>
+  <div class="type-row"><div class="label">12 / Caption</div><div class="sample" style="font-family:'Ballinger';font-weight:400;font-size:12px">The quick brown fox</div></div>
+</section>
+
+<!-- ============== SHADOWS ============== -->
+<section id="shadows">
+  <h2>Shadows</h2>
+  <p class="lead">Elevation tokens.</p>
+  <div class="shadow-grid">
+    <div class="shadow-demo" style="box-shadow:none">--box-shadow-none</div>
+    <div class="shadow-demo" style="box-shadow: var(--shadow-default)">--shadow-default</div>
+    <div class="shadow-demo" style="box-shadow: var(--shadow-card)">--shadow-card</div>
+  </div>
+</section>
+
+<!-- ============== RADIUS ============== -->
+<section id="radius">
+  <h2>Border radius</h2>
+  <div class="demo-row">
+    <div class="demo-block" style="border-radius:0">none</div>
+    <div class="demo-block" style="border-radius: var(--border-radius-small)">small · 5px</div>
+    <div class="demo-block" style="border-radius: var(--border-radius-medium)">medium · 10px</div>
+    <div class="demo-block" style="border-radius: var(--border-radius-large)">large · 15px</div>
+    <div class="demo-block" style="border-radius: var(--border-radius-round)">round · 50px</div>
+  </div>
+</section>
+
+<!-- ============== OPACITY ============== -->
+<section id="opacity">
+  <h2>Opacity scale</h2>
+  <div class="demo-row">
+    <div class="demo-block" style="opacity:1">100%</div>
+    <div class="demo-block" style="opacity: var(--opacity-very-high)">81% · very-high</div>
+    <div class="demo-block" style="opacity: var(--opacity-high)">75% · high</div>
+    <div class="demo-block" style="opacity: var(--opacity-medium-high)">70% · medium-high</div>
+    <div class="demo-block" style="opacity: var(--opacity-medium)">60% · medium</div>
+    <div class="demo-block" style="opacity: var(--opacity-light)">50% · light</div>
+  </div>
+</section>
+
+<!-- ============== BUTTONS ============== -->
+<section id="buttons">
+  <h2>Buttons</h2>
+  <p class="lead">Theme classes from <code>theme.css</code>.</p>
+  <div class="btn-demo">
+    <button class="btn-primary-theme" style="padding:14px 28px">Primary</button>
+    <button class="btn-outline-white" style="padding:12px 26px">Outline White</button>
+    <button class="btn-white-solid" style="padding:14px 28px">White Solid</button>
+  </div>
+</section>
+
+<!-- ============== LOGOS ============== -->
+<section id="logos">
+  <h2>Brand logos</h2>
+  <div class="logo-gallery">
+    <div class="lg light"><img src="img/Kiwrious_logo_gradient_wide.svg" alt="Gradient" /><div class="name">Kiwrious_logo_gradient_wide.svg</div></div>
+    <div class="lg light"><img src="img/Kiwrious_logo_gradient_wide_animated.svg" alt="Animated" /><div class="name">Kiwrious_logo_gradient_wide_animated.svg</div></div>
+    <div class="lg dark"><img src="img/Kiwrious_logo_white_wide.svg" alt="White" /><div class="name">Kiwrious_logo_white_wide.svg</div></div>
+  </div>
+</section>
+
+<!-- ============== HEXAGONS ============== -->
+<section id="hexagons">
+  <h2>Brand hexagons</h2>
+  <p class="lead">Color tokens used as hex tile backgrounds.</p>
+  <div class="hex-row">
+    <div class="hex"><img src="img/dark_blue_hexagon.svg" /><div class="name">dark_blue_hexagon.svg</div></div>
+    <div class="hex"><img src="img/light_blue_hexagon.svg" /><div class="name">light_blue_hexagon.svg</div></div>
+    <div class="hex"><img src="img/green_hexagon.svg" /><div class="name">green_hexagon.svg</div></div>
+    <div class="hex"><img src="img/light_green_hexagon.svg" /><div class="name">light_green_hexagon.svg</div></div>
+    <div class="hex"><img src="img/yellow_hexagon.svg" /><div class="name">yellow_hexagon.svg</div></div>
+    <div class="hex"><img src="img/red_hexagon.svg" /><div class="name">red_hexagon.svg</div></div>
+    <div class="hex"><img src="img/pink_hexagon.svg" /><div class="name">pink_hexagon.svg</div></div>
+    <div class="hex"><img src="img/purple_hexagon.svg" /><div class="name">purple_hexagon.svg</div></div>
+    <div class="hex"><img src="img/soft_hexagon_blank.svg" /><div class="name">soft_hexagon_blank.svg</div></div>
+  </div>
+</section>
+
+<!-- ============== SOCIAL ============== -->
+<section id="social">
+  <h2>Social icons</h2>
+  <p class="lead">Color and white variants.</p>
+  <h3 class="subhead">On light</h3>
+  <div class="social-row">
+    <div class="demo"><img src="img/icon_facebook.svg" /><div class="name">facebook</div></div>
+    <div class="demo"><img src="img/icon_instagram.svg" /><div class="name">instagram</div></div>
+    <div class="demo"><img src="img/icon_linkedin.svg" /><div class="name">linkedin</div></div>
+    <div class="demo"><img src="img/icon_twitter.svg" /><div class="name">twitter</div></div>
+    <div class="demo"><img src="img/icon_youtube.svg" /><div class="name">youtube</div></div>
+  </div>
+  <h3 class="subhead">On dark</h3>
+  <div class="social-row">
+    <div class="demo dark"><img src="img/icon_facebook_white.svg" /><div class="name">facebook_white</div></div>
+    <div class="demo dark"><img src="img/icon_instagram_white.svg" /><div class="name">instagram_white</div></div>
+    <div class="demo dark"><img src="img/icon_linkedin_white.svg" /><div class="name">linkedin_white</div></div>
+    <div class="demo dark"><img src="img/icon_twitter_white.svg" /><div class="name">twitter_white</div></div>
+    <div class="demo dark"><img src="img/icon_youtube_white.svg" /><div class="name">youtube_white</div></div>
+  </div>
+</section>
+
+<!-- ============== SENSORS ============== -->
+<section id="sensors">
+  <h2>Sensor graphics</h2>
+  <div class="card-grid">
+    <div class="card"><div class="thumb"><img src="img/graphics/air_sensor.png" /></div><div class="name">graphics/air_sensor.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/colour_sensor.png" /></div><div class="name">graphics/colour_sensor.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/conductivity_sensor.png" /></div><div class="name">graphics/conductivity_sensor.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/heartrate_sensor.png" /></div><div class="name">graphics/heartrate_sensor.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/humidity_sensor.png" /></div><div class="name">graphics/humidity_sensor.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/temperature_sensor.png" /></div><div class="name">graphics/temperature_sensor.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/uv_sensor.png" /></div><div class="name">graphics/uv_sensor.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/meter_sensor.svg" /></div><div class="name">graphics/meter_sensor.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/Icon_hex_colour_sound.svg" /></div><div class="name">Icon_hex_colour_sound.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/Icon_hex_colour_sound_ripple.svg" /></div><div class="name">Icon_hex_colour_sound_ripple.svg</div></div>
+  </div>
+</section>
+
+<!-- ============== GRAPHICS ============== -->
+<section id="graphics">
+  <h2>UI graphics &amp; illustrations</h2>
+  <div class="card-grid">
+    <div class="card"><div class="thumb"><img src="img/graphics/Bitmap.svg" /></div><div class="name">graphics/Bitmap.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/circuit_blue.svg" /></div><div class="name">graphics/circuit_blue.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/circuit_green.svg" /></div><div class="name">graphics/circuit_green.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/circuit_z_blue.svg" /></div><div class="name">graphics/circuit_z_blue.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/circuit_combined_green_blue.svg" /></div><div class="name">graphics/circuit_combined_green_blue.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/combined_circuit_right.png" /></div><div class="name">graphics/combined_circuit_right.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/heart.svg" /></div><div class="name">graphics/heart.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/oval_blue.svg" /></div><div class="name">graphics/oval_blue.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/three_rounds_blue.svg" /></div><div class="name">graphics/three_rounds_blue.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/meter_blue.svg" /></div><div class="name">graphics/meter_blue.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/speaker.svg" /></div><div class="name">graphics/speaker.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/Footer_Left.png" /></div><div class="name">graphics/Footer_Left.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/Footer_Right.png" /></div><div class="name">graphics/Footer_Right.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/register_left_graphic.png" /></div><div class="name">graphics/register_left_graphic.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/register_right_graphic.png" /></div><div class="name">graphics/register_right_graphic.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/register_footer_left.png" /></div><div class="name">graphics/register_footer_left.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/graphics/register_footer_right.png" /></div><div class="name">graphics/register_footer_right.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/curved_bg.svg" /></div><div class="name">curved_bg.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/yellow_curved_bg.svg" /></div><div class="name">yellow_curved_bg.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/wavy_line.svg" /></div><div class="name">wavy_line.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/sensors_kit_bg.svg" /></div><div class="name">sensors_kit_bg.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/footer_bg.svg" /></div><div class="name">footer_bg.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/header_fill.svg" /></div><div class="name">header_fill.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/header_fill_bottom.svg" /></div><div class="name">header_fill_bottom.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/header_fill_layer.svg" /></div><div class="name">header_fill_layer.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/play_btn.svg" /></div><div class="name">play_btn.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/play_btn_ripple.svg" /></div><div class="name">play_btn_ripple.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/play_btn_ripple_white.svg" /></div><div class="name">play_btn_ripple_white.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/menu_icon.svg" /></div><div class="name">menu_icon.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/download_icon.svg" /></div><div class="name">download_icon.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/checkbox_check_icon.svg" /></div><div class="name">checkbox_check_icon.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/plus.svg" /></div><div class="name">plus.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/plus_thin.svg" /></div><div class="name">plus_thin.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/laptop.svg" /></div><div class="name">laptop.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/zally.svg" /></div><div class="name">zally.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/zally_hand.svg" /></div><div class="name">zally_hand.svg</div></div>
+    <div class="card"><div class="thumb"><img src="img/Zally_1.svg" /></div><div class="name">Zally_1.svg</div></div>
+  </div>
+</section>
+
+<!-- ============== BRANDS ============== -->
+<section id="brands">
+  <h2>Partner brands</h2>
+  <div class="card-grid">
+    <div class="card"><div class="thumb"><img src="img/brands/uoa@2x.png" /></div><div class="name">brands/uoa@2x.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/AHLab_Logo.png" /></div><div class="name">brands/AHLab_Logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/ABI_logo.png" /></div><div class="name">brands/ABI_logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/CIE_logo.png" /></div><div class="name">brands/CIE_logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/MERW_logo.jpg" /></div><div class="name">brands/MERW_logo.jpg</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/ESW-SCP-VC-RGB@2x.png" /></div><div class="name">brands/ESW-SCP-VC-RGB@2x.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/cloud_9.png" /></div><div class="name">brands/cloud_9.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/logo-x2@2x.png" /></div><div class="name">brands/logo-x2@2x.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/Group%203@2x.png" /></div><div class="name">brands/Group 3@2x.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/brands/Group%2029@2x.png" /></div><div class="name">brands/Group 29@2x.png</div></div>
+  </div>
+</section>
+
+<!-- ============== SCHOOLS ============== -->
+<section id="schools">
+  <h2>School logos</h2>
+  <div class="card-grid">
+    <div class="card"><div class="thumb"><img src="img/schools/baradene_logo.png" /></div><div class="name">schools/baradene_logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/schools/bird_logo.png" /></div><div class="name">schools/bird_logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/schools/eggs_logo.png" /></div><div class="name">schools/eggs_logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/schools/flat_lux_logo.png" /></div><div class="name">schools/flat_lux_logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/schools/kings_logo.png" /></div><div class="name">schools/kings_logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/schools/mags_logo.png" /></div><div class="name">schools/mags_logo.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/schools/mangawahi_beach.png" /></div><div class="name">schools/mangawahi_beach.png</div></div>
+    <div class="card"><div class="thumb"><img src="img/schools/panmure_bridge_logo.png" /></div><div class="name">schools/panmure_bridge_logo.png</div></div>
+  </div>
+</section>
+
+<!-- ============== AVATARS ============== -->
+<section id="avatars">
+  <h2>Team avatars</h2>
+  <div class="card-grid">
+    <div class="card"><div class="thumb"><img src="img/avatars/alaeddin.png" /></div><div class="name">alaeddin</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/andrew.png" /></div><div class="name">andrew</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/chamod.png" /></div><div class="name">chamod</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/dawn.png" /></div><div class="name">dawn</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/deviana.png" /></div><div class="name">deviana</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/elliott.png" /></div><div class="name">elliott</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/fiona.png" /></div><div class="name">fiona</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/haimo.png" /></div><div class="name">haimo</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/jiashuo.png" /></div><div class="name">jiashuo</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/juan.png" /></div><div class="name">juan</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/phil.png" /></div><div class="name">phil</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/priyarshi.png" /></div><div class="name">priyarshi</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/qin.png" /></div><div class="name">qin</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/sankha.png" /></div><div class="name">sankha</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/sonia.png" /></div><div class="name">sonia</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/suranga.png" /></div><div class="name">suranga</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/xinke.png" /></div><div class="name">xinke</div></div>
+    <div class="card"><div class="thumb"><img src="img/avatars/yvonne.png" /></div><div class="name">yvonne</div></div>
+  </div>
+</section>
+
+<!-- ============== NEWS ============== -->
+<section id="news">
+  <h2>News imagery</h2>
+  <div class="card-grid">
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/news/news_2020_jun_10.jpg')"></div><div class="name">news/news_2020_jun_10.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/news/news_2020_jun_10.png')"></div><div class="name">news/news_2020_jun_10.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/news/news_2020_sep_12.png')"></div><div class="name">news/news_2020_sep_12.png</div></div>
+  </div>
+</section>
+
+<!-- ============== PHOTOGRAPHY ============== -->
+<section id="photography">
+  <h2>Photography &amp; campaign imagery</h2>
+  <div class="card-grid">
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/header_background_image.jpg')"></div><div class="name">header_background_image.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/header_sensors.png')"></div><div class="name">header_sensors.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/discover_together_bg.png')"></div><div class="name">discover_together_bg.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/footer_background.png')"></div><div class="name">footer_background.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/laptop_with_sensors.jpg')"></div><div class="name">laptop_with_sensors.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/kiwrious.jpg')"></div><div class="name">kiwrious.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/schools.jpg')"></div><div class="name">schools.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/students.jpg')"></div><div class="name">students.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/supporting_teachers.jpg')"></div><div class="name">supporting_teachers.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/wider_community.JPG')"></div><div class="name">wider_community.JPG</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/whiteborad_learning.JPG')"></div><div class="name">whiteborad_learning.JPG</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/inspiring_fearless_thumb.JPG')"></div><div class="name">inspiring_fearless_thumb.JPG</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/inspiring_fearless_t_ugQpO.jpg')"></div><div class="name">inspiring_fearless_t_ugQpO.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/text_slider_img_1.jpg')"></div><div class="name">text_slider_img_1.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/yellow_curved_bg.jpg')"></div><div class="name">yellow_curved_bg.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/20151126_NZStory_Furnwear_Room_096.jpg')"></div><div class="name">20151126_NZStory_Furnwear_Room_096.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/20151126_nzstory_fur_l7Are.jpg')"></div><div class="name">20151126_nzstory_fur_l7Are.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/Rectangl_Copy_56.jpg')"></div><div class="name">Rectangl_Copy_56.jpg</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/Rectangle_Copy_45.png')"></div><div class="name">Rectangle_Copy_45.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/laptop.png')"></div><div class="name">laptop.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/left_books.png')"></div><div class="name">left_books.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/right_books.png')"></div><div class="name">right_books.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/flow_chart.png')"></div><div class="name">flow_chart.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/flow_chart_mobile.png')"></div><div class="name">flow_chart_mobile.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/process.png')"></div><div class="name">process.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/process_mobile.png')"></div><div class="name">process_mobile.png</div></div>
+    <div class="card"><div class="thumb cover full" style="background-image:url('img/video_thumb.png')"></div><div class="name">video_thumb.png</div></div>
+  </div>
+</section>
+
+<!-- ============== FAVICON ============== -->
+<section id="favicon">
+  <h2>Favicon set</h2>
+  <p class="lead">Multi-platform icons in <code>img/favicon/</code>.</p>
+  <div class="fav-strip">
+    <div class="f"><img src="img/favicon/favicon-16x16.png" width="16" height="16" /><div class="name">16</div></div>
+    <div class="f"><img src="img/favicon/favicon-32x32.png" width="32" height="32" /><div class="name">32</div></div>
+    <div class="f"><img src="img/favicon/favicon-96x96.png" width="48" height="48" /><div class="name">96</div></div>
+    <div class="f"><img src="img/favicon/android-icon-72x72.png" width="48" height="48" /><div class="name">android 72</div></div>
+    <div class="f"><img src="img/favicon/android-icon-96x96.png" width="56" height="56" /><div class="name">android 96</div></div>
+    <div class="f"><img src="img/favicon/android-icon-144x144.png" width="64" height="64" /><div class="name">android 144</div></div>
+    <div class="f"><img src="img/favicon/android-icon-192x192.png" width="72" height="72" /><div class="name">android 192</div></div>
+    <div class="f"><img src="img/favicon/apple-icon-57x57.png" width="40" height="40" /><div class="name">apple 57</div></div>
+    <div class="f"><img src="img/favicon/apple-icon-76x76.png" width="48" height="48" /><div class="name">apple 76</div></div>
+    <div class="f"><img src="img/favicon/apple-icon-120x120.png" width="56" height="56" /><div class="name">apple 120</div></div>
+    <div class="f"><img src="img/favicon/apple-icon-152x152.png" width="64" height="64" /><div class="name">apple 152</div></div>
+    <div class="f"><img src="img/favicon/apple-icon-180x180.png" width="72" height="72" /><div class="name">apple 180</div></div>
+    <div class="f"><img src="img/favicon/ms-icon-144x144.png" width="64" height="64" /><div class="name">ms 144</div></div>
+    <div class="f"><img src="img/favicon/ms-icon-310x310.png" width="80" height="80" /><div class="name">ms 310</div></div>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<footer>
+  Kiwrious CDN · Design Reference · Served from <code>lib/</code> · Deployed to <code>https://stakco.github.io/kiwrious/cdn/</code>
+</footer>
+
+<script>
+  // Sidebar scroll-spy: highlight the section currently in view.
+  const links = Array.from(document.querySelectorAll('nav.toc a'));
+  const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const a = byId.get(e.target.id);
+      if (!a) return;
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-50px 0px -70% 0px', threshold: 0 });
+  document.querySelectorAll('main section[id]').forEach(s => io.observe(s));
+
+  /* ----------------------------------------------------------------
+     Action overlays: copy CSS values + image actions (download / copy
+     path / copy image to clipboard). All buttons are FontAwesome
+     icons; behaviour is delegated through one click handler.
+     ---------------------------------------------------------------- */
+
+  const ICON = {
+    copy:        '<i class="fa-regular fa-copy"></i>',
+    download:    '<i class="fa-solid fa-download"></i>',
+    copyPath:    '<i class="fa-solid fa-link"></i>',
+    copyImage:   '<i class="fa-regular fa-image"></i>',
+  };
+
+  const makeBtn = (action, iconHtml, title) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.dataset.action = action;
+    b.title = title;
+    b.setAttribute('aria-label', title);
+    b.innerHTML = iconHtml;
+    return b;
+  };
+
+  const wrapActions = (...buttons) => {
+    const w = document.createElement('div');
+    w.className = 'actions';
+    buttons.forEach(b => w.appendChild(b));
+    return w;
+  };
+
+  // ---- Property cards: derive copy value, attach single Copy button ----
+
+  const setCopy = (host, value) => {
+    if (!host || !value || host.querySelector('.actions')) return;
+    host.dataset.copy = value;
+    host.appendChild(wrapActions(makeBtn('copy-text', ICON.copy, 'Copy ' + value)));
+  };
+
+  // Color swatches → copy hex from .hex element
+  document.querySelectorAll('.swatch').forEach(s => {
+    const hex = s.querySelector('.hex')?.textContent.trim();
+    setCopy(s, hex);
+  });
+
+  // Gradient card → copy the linear-gradient value (declared on .preview)
+  document.querySelectorAll('.gradient-card').forEach(g => {
+    const meta = g.querySelector('.meta')?.textContent || '';
+    const m = meta.match(/(linear-gradient\([^)]*\))/);
+    setCopy(g, m ? m[1] : 'var(--gradient-primary)');
+  });
+
+  // Shadow demos → copy the inline box-shadow
+  document.querySelectorAll('.shadow-demo').forEach(d => {
+    const cs = getComputedStyle(d).boxShadow;
+    setCopy(d, cs && cs !== 'none' ? cs : 'none');
+  });
+
+  // Radius / opacity demo blocks → copy the relevant property
+  document.querySelectorAll('#radius .demo-block').forEach(d => {
+    const r = getComputedStyle(d).borderRadius;
+    setCopy(d, r);
+  });
+  document.querySelectorAll('#opacity .demo-block').forEach(d => {
+    const o = getComputedStyle(d).opacity;
+    setCopy(d, o);
+  });
+
+  // Type rows → copy a CSS shorthand from the sample's inline styles
+  document.querySelectorAll('.type-row').forEach(row => {
+    const sample = row.querySelector('.sample');
+    if (!sample) return;
+    const cs = getComputedStyle(sample);
+    const decl = `font: ${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize}/${cs.lineHeight} ${cs.fontFamily};`;
+    setCopy(row, decl);
+  });
+
+  // ---- Image cards: download / copy path / copy image-to-clipboard ----
+
+  const IMAGE_CARDS = [
+    '.card', '.hex-row .hex', '.social-row .demo',
+    '.logo-gallery .lg', '.fav-strip .f',
+  ].join(', ');
+
+  document.querySelectorAll(IMAGE_CARDS).forEach(card => {
+    if (card.querySelector('.actions')) return;
+    const img = card.querySelector('img');
+    const bgEl = card.querySelector('[style*="background-image"]');
+    let src = null;
+    if (img) src = img.getAttribute('src');
+    else if (bgEl) {
+      const m = bgEl.getAttribute('style').match(/url\(['"]?([^'")]+)['"]?\)/);
+      if (m) src = m[1];
+    }
+    if (!src) return;
+    card.dataset.src = src;
+    card.appendChild(wrapActions(
+      makeBtn('download',   ICON.download,  'Download'),
+      makeBtn('copy-path',  ICON.copyPath,  'Copy path'),
+      makeBtn('copy-image', ICON.copyImage, 'Copy image'),
+    ));
+  });
+
+  // ---- Toast feedback ----
+
+  const toastEl = document.createElement('div');
+  toastEl.className = 'toast';
+  document.body.appendChild(toastEl);
+  let toastTimer = null;
+  const toast = (msg) => {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1600);
+  };
+
+  // ---- Click handler ----
+
+  const fileNameFromUrl = (url) => {
+    try { return decodeURIComponent(new URL(url, location.href).pathname.split('/').pop()); }
+    catch { return 'image'; }
+  };
+
+  const writeText = async (text) => {
+    try { await navigator.clipboard.writeText(text); return true; }
+    catch { return false; }
+  };
+
+  const copyImageToClipboard = async (url) => {
+    const res = await fetch(url);
+    const blob = await res.blob();
+    if (blob.type === 'image/svg+xml') {
+      // Clipboard image API doesn't accept SVG; copy the markup as text.
+      const text = await blob.text();
+      await navigator.clipboard.writeText(text);
+      return 'svg-text';
+    }
+    if (typeof ClipboardItem === 'undefined') throw new Error('ClipboardItem unsupported');
+    await navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })]);
+    return 'image';
+  };
+
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('button[data-action]');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const action = btn.dataset.action;
+    const card = btn.closest('[data-copy], [data-src]');
+    if (!card) return;
+
+    try {
+      if (action === 'copy-text') {
+        const ok = await writeText(card.dataset.copy);
+        toast(ok ? 'Copied: ' + card.dataset.copy : 'Copy failed');
+        return;
+      }
+      const src = card.dataset.src;
+      const absolute = new URL(src, location.href).href;
+
+      if (action === 'copy-path') {
+        const ok = await writeText(absolute);
+        toast(ok ? 'Path copied' : 'Copy failed');
+      } else if (action === 'download') {
+        const a = document.createElement('a');
+        a.href = src;
+        a.download = fileNameFromUrl(src);
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        toast('Downloading ' + a.download);
+      } else if (action === 'copy-image') {
+        const kind = await copyImageToClipboard(src);
+        toast(kind === 'svg-text' ? 'SVG markup copied' : 'Image copied to clipboard');
+      }
+    } catch (err) {
+      console.error(err);
+      toast('Action failed: ' + (err.message || err));
+    }
+  });
+</script>
+
+</body>
+</html>

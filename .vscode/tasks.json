@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Serve lib (http-server)",
+      "type": "shell",
+      "command": "npx --yes http-server lib -p 4710 -a 127.0.0.1 -c-1 --cors",
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            { "regexp": ".", "file": 1, "location": 2, "message": 3 }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Starting up http-server",
+            "endsPattern": "Available on:"
+          }
+        }
+      ],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Serve lib (Python)",
+      "type": "shell",
+      "command": "python3 -m http.server 4710 --bind 127.0.0.1",
+      "options": {
+        "cwd": "${workspaceFolder}/lib"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}

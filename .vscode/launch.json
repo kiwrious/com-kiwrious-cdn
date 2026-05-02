@@ -2,12 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
-            "name": "Publish",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceFolder}/deploy.js",
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
-        },
+      "name": "Publish",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/deploy.js",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Serve Design Reference (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:4710/index.html",
+      "webRoot": "${workspaceFolder}/lib",
+      "preLaunchTask": "Serve lib (http-server)"
+    }
   ]
 }
