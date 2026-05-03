@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Serve lib (http-server)",
+      "label": "Serve CDN (http-server)",
       "type": "shell",
-      "command": "npx --yes http-server lib -p 4710 -a 127.0.0.1 -c-1 --cors",
+      "command": "npx --yes http-server . -p 4710 -a 127.0.0.1 -c-1 --cors",
       "isBackground": true,
       "problemMatcher": [
         {
@@ -24,11 +24,11 @@
       }
     },
     {
-      "label": "Serve lib (Python)",
+      "label": "Serve CDN (Python)",
       "type": "shell",
       "command": "python3 -m http.server 4710 --bind 127.0.0.1",
       "options": {
-        "cwd": "${workspaceFolder}/lib"
+        "cwd": "${workspaceFolder}"
       },
       "isBackground": true,
       "problemMatcher": [],
