@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Serve Design Reference (Chrome)",
+      "name": "Run",
       "type": "chrome",
       "request": "launch",
       "url": "http://127.0.0.1:4710/index.html",
