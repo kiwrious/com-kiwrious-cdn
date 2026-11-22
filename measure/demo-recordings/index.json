@@ -1,0 +1,132 @@
+{
+  "kind": "kiwrious-demo-recordings",
+  "version": 1,
+  "recordings": [
+    {
+      "file": "2026-11-19_sanitiser-sniff.kiwrious",
+      "demoId": "demo:sanitiser-sniff",
+      "name": "Hand sanitiser near the sensor",
+      "sensorType": "VOC",
+      "startedAt": 1795037820000,
+      "durationS": 90,
+      "samples": 90
+    },
+    {
+      "file": "2026-11-18_breathing-exercise.kiwrious",
+      "demoId": "demo:breathing-exercise",
+      "name": "4-7-8 breathing exercise",
+      "sensorType": "HEART_RATE",
+      "startedAt": 1794987900000,
+      "durationS": 150,
+      "samples": 150
+    },
+    {
+      "file": "2026-11-17_forehead-check.kiwrious",
+      "demoId": "demo:forehead-check",
+      "name": "Forehead & palm check",
+      "sensorType": "TEMPERATURE",
+      "startedAt": 1794862080000,
+      "durationS": 45,
+      "samples": 45
+    },
+    {
+      "file": "2026-11-14_dissolving-salt.kiwrious",
+      "demoId": "demo:dissolving-salt",
+      "name": "Dissolving salt, one spoon at a time",
+      "sensorType": "CONDUCTIVITY",
+      "startedAt": 1794614580000,
+      "durationS": 180,
+      "samples": 180
+    },
+    {
+      "file": "2026-11-12_classroom-lights.kiwrious",
+      "demoId": "demo:classroom-lights",
+      "name": "Classroom lights & blinds",
+      "sensorType": "UV",
+      "startedAt": 1794431100000,
+      "durationS": 140,
+      "samples": 140
+    },
+    {
+      "file": "2026-11-11_jumping-jacks.kiwrious",
+      "demoId": "demo:jumping-jacks",
+      "name": "Resting vs jumping jacks",
+      "sensorType": "HEART_RATE",
+      "startedAt": 1794349800000,
+      "durationS": 180,
+      "samples": 180
+    },
+    {
+      "file": "2026-11-10_breath-test.kiwrious",
+      "demoId": "demo:breath-test",
+      "name": "Three breaths on the sensor",
+      "sensorType": "HUMIDITY",
+      "startedAt": 1794273720000,
+      "durationS": 70,
+      "samples": 70
+    },
+    {
+      "file": "2026-11-08_tea-cooling.kiwrious",
+      "demoId": "demo:tea-cooling",
+      "name": "Cup of tea cooling down",
+      "sensorType": "TEMPERATURE",
+      "startedAt": 1794105000000,
+      "durationS": 1800,
+      "samples": 360
+    },
+    {
+      "file": "2026-11-05_bedroom-overnight.kiwrious",
+      "demoId": "demo:bedroom-overnight",
+      "name": "Bedroom overnight",
+      "sensorType": "HUMIDITY",
+      "startedAt": 1793869200000,
+      "durationS": 28800,
+      "samples": 480
+    },
+    {
+      "file": "2026-11-04_water-tasting.kiwrious",
+      "demoId": "demo:water-tasting",
+      "name": "Distilled, tap, mineral & sea water",
+      "sensorType": "CONDUCTIVITY",
+      "startedAt": 1793744100000,
+      "durationS": 130,
+      "samples": 130
+    },
+    {
+      "file": "2026-11-03_sunscreen-test.kiwrious",
+      "demoId": "demo:sunscreen-test",
+      "name": "Sunscreen vs cling film",
+      "sensorType": "UV",
+      "startedAt": 1793662860000,
+      "durationS": 130,
+      "samples": 130
+    },
+    {
+      "file": "2026-11-01_cooking-dinner.kiwrious",
+      "demoId": "demo:cooking-dinner",
+      "name": "Kitchen air while cooking",
+      "sensorType": "VOC",
+      "startedAt": 1793510400000,
+      "durationS": 2700,
+      "samples": 540
+    },
+    {
+      "file": "2026-10-30_bathroom-shower.kiwrious",
+      "demoId": "demo:bathroom-shower",
+      "name": "Bathroom during a hot shower",
+      "sensorType": "HUMIDITY",
+      "startedAt": 1793296920000,
+      "durationS": 2400,
+      "samples": 480
+    },
+    {
+      "file": "2026-10-27_walk-to-school.kiwrious",
+      "demoId": "demo:walk-to-school",
+      "name": "Walk to school — sun & shade",
+      "sensorType": "UV",
+      "startedAt": 1793041920000,
+      "durationS": 1200,
+      "samples": 240
+    }
+  ]
+}
