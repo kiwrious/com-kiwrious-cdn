@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "baseUrl": "https://cdn.kiwrious.com/play/demos/",
+  "loadIn": "https://play.kiwrious.com/ (File > Load from your computer)",
+  "demoMode": "The six newer demos have a 'Demo mode (D)' button: press D (or click it) and drag the 'demo value' slider (or use the up/down arrow keys) to fake a sensor reading. No hardware needed.",
+  "demos": [
+    {
+      "file": "breathing-exercise.sb3",
+      "title": "Breathing Exercise",
+      "sensors": ["Humidity"],
+      "description": "Breathe out onto the humidity sensor to inflate a balloon and follow a calm breathing rhythm.",
+      "demoMode": false,
+      "howToTest": [
+        "Plug in the humidity sensor.",
+        "Click the green flag and choose the sensor in the pop-up.",
+        "Set the breathing cycle slider, then click All Set!",
+        "Breathe slowly onto the sensor and watch the balloon rise. Stop breathing on it and the balloon sinks."
+      ],
+      "challenge": "Can you match the balloon to a 4-second-in, 4-second-out breath for one whole minute?"
+    },
+    {
+      "file": "hungry-parrot.sb3",
+      "title": "Hungry Parrot",
+      "sensors": ["Light (lux)"],
+      "description": "Steer a parrot with light: cover the light sensor to fly down and uncover it to fly up. Catch the good strawberries and dodge the bad ones.",
+      "demoMode": false,
+      "howToTest": [
+        "Plug in the UV/light sensor and lay it face up on the table.",
+        "Click the green flag and choose the sensor in the pop-up.",
+        "Click All Set! (it measures the room's brightness first).",
+        "Move your hand over the sensor to steer the parrot."
+      ],
+      "challenge": "What is your best score? Does the game get easier or harder near a window?"
+    },
+    {
+      "file": "hedgehog-and-light.sb3",
+      "title": "Hedgehog and Light",
+      "sensors": ["Light (lux)", "Webcam"],
+      "description": "A hedgehog sleeps in the dark and wakes up when the light gets bright, over your webcam picture.",
+      "demoMode": false,
+      "howToTest": [
+        "Plug in the UV/light sensor.",
+        "Click the green flag, allow the camera, and choose the sensor in the pop-up.",
+        "Cover the sensor: the hedgehog sleeps. Shine a torch on it: the hedgehog wakes up."
+      ],
+      "challenge": "Find the darkest spot in the room. How many lux does it take to wake the hedgehog?"
+    },
+    {
+      "file": "uv-graph-video.sb3",
+      "title": "UV Graph over Video",
+      "sensors": ["UV", "Light (lux)", "Webcam"],
+      "description": "Draws a live line graph of the UV index over your webcam picture, with the lux value shown too.",
+      "demoMode": false,
+      "howToTest": [
+        "Plug in the UV/light sensor.",
+        "Click the green flag, allow the camera, and choose the sensor in the pop-up.",
+        "Point the sensor at a window or outside and watch the line climb."
+      ],
+      "challenge": "Is the UV index higher in the sun, in the shade, or behind a window? Graph all three."
+    },
+    {
+      "file": "voc-smell-detector.sb3",
+      "title": "Smell Detector",
+      "sensors": ["VOC (tVOC ppb, CO2eq ppm)"],
+      "description": "Sniffy the smell detector reacts to the air: fresh air, 'I smell something', or 'Phew!', with a big tVOC number and a 3-step meter.",
+      "demoMode": true,
+      "howToTest": [
+        "No sensor: click the green flag, press D, and drag the demo slider. Under 150 shows Fresh air, 150 to 599 shows Something smelly, 600 and up shows Phew!",
+        "With the VOC sensor: click the green flag, click Connect sensor and choose the sensor.",
+        "Wait about 15 seconds while the sensor warms up, then hold hand sanitiser or an orange peel near it."
+      ],
+      "challenge": "Rank five smells from weakest to strongest: orange peel, hand sanitiser, coffee, a marker pen and your breath."
+    },
+    {
+      "file": "salty-water-tester.sb3",
+      "title": "Salty Water Tester",
+      "sensors": ["Conductivity (μS)"],
+      "description": "A light bulb shows whether water conducts electricity: off, dim or bright, with a big μS reading and three saved results to compare.",
+      "demoMode": true,
+      "howToTest": [
+        "No sensor: click the green flag, press D, and drag the slider. Under 2 μS the bulb is off, 2 to 99 it is dim, 100 and up it is bright. Press 1, 2 or 3 to save the reading.",
+        "With the conductivity sensor: click the green flag, click Connect sensor and choose the sensor.",
+        "Dip the probes in tap water and press 1, in salty water and press 2, in sugary water and press 3. Rinse the probes between cups."
+      ],
+      "challenge": "Add salt one pinch at a time. How many pinches until the bulb is bright? Does sugar ever make it light up?"
+    },
+    {
+      "file": "hot-or-cold.sb3",
+      "title": "Hot or Cold?",
+      "sensors": ["Infrared temperature (°C)", "Ambient temperature (°C)"],
+      "description": "An infrared thermometer: point the sensor at things and see a coloured thermometer bar, a big °C number, and a COLD, WARM or HOT label with a sound.",
+      "demoMode": true,
+      "howToTest": [
+        "No sensor: click the green flag, press D, and drag the slider from -10 to 90. Under 18 shows COLD, 18 to 34 shows WARM, 35 and up shows HOT.",
+        "With the temperature sensor: click the green flag, click Connect sensor and choose the sensor.",
+        "Point it at an ice cube, your hand, and a warm drink."
+      ],
+      "challenge": "Which is warmer: your forehead or your fingertips? A dark or a light T-shirt left in the sun?"
+    },
+    {
+      "file": "sunscreen-test.sb3",
+      "title": "Sunscreen Test",
+      "sensors": ["UV index"],
+      "description": "Records the UV index through clear plastic, then again with sunscreen on the plastic, and works out what percentage of UV the sunscreen blocked.",
+      "demoMode": true,
+      "howToTest": [
+        "No sensor: click the green flag, press D, set the slider to 8 and press 1. Set it to 2 and press 2. It shows 75% blocked and Great protection!",
+        "With the UV sensor, outside or in strong sun: click the green flag, click Connect sensor and choose the sensor.",
+        "Hold clear plastic (a sandwich bag or a sheet protector) over the sensor and press 1. Rub a thin layer of sunscreen on the plastic and press 2."
+      ],
+      "challenge": "Test SPF 15 against SPF 50, or a thin layer against a thick one. Do sunglasses block UV too?"
+    },
+    {
+      "file": "live-graph.sb3",
+      "title": "Live Graph",
+      "sensors": ["Any Kiwrious sensor"],
+      "description": "A live line graph of any sensor. It finds the sensor that is plugged in and scales itself, showing the highest and lowest readings and a big 'now' value.",
+      "demoMode": true,
+      "howToTest": [
+        "No sensor: click the green flag, press D, and move the slider. The line wiggles on its own, and moving the slider shifts it up and down.",
+        "With any sensor: click the green flag, click Connect sensor and choose the sensor. The graph picks the reading for you.",
+        "Keys 1-8 pick a reading (1 Lux, 2 UV, 3 Humidity, 4 IR temp, 5 Air temp, 6 Conductance, 7 tVOC, 8 CO2eq). Key 0 goes back to auto-detect, and C clears the graph."
+      ],
+      "challenge": "Breathe on the humidity sensor and graph it. How long does it take to go back to normal?"
+    },
+    {
+      "file": "sensor-band.sb3",
+      "title": "Sensor Band",
+      "sensors": ["Light (lux) or any Kiwrious sensor", "Music"],
+      "description": "Turns a sensor into a musical instrument: a higher reading plays a higher note, and coloured notes fly across the stage.",
+      "demoMode": true,
+      "howToTest": [
+        "No sensor: click the green flag, press D, and drag the slider. Low values play low notes and high values play high notes (turn the sound on).",
+        "With the UV/light sensor: click the green flag, click Connect sensor and choose the sensor, then wave your hand over it. It learns your darkest and brightest light. Press C to re-tune.",
+        "Keys 1-5 change the instrument: piano, marimba, flute, steel drum, synth."
+      ],
+      "challenge": "Can you play a tune from Twinkle Twinkle Little Star with only your hand and a torch?"
+    }
+  ]
+}
